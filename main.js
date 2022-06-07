@@ -17,8 +17,12 @@ addRandomEl.addEventListener('click', (e) => {
 const addRandomImage = () => {
     const randomImageUrl = imagesArray[Math.floor(Math.random() * imagesArray.length)]
     const imgEl = createImgELAndAppendUrl(randomImageUrl)
+    imgEl.addEventListener('click', (e) => {
+        e.target.remove()
+    })
     container.appendChild(imgEl)
 }
+
 
 const createImgELAndAppendUrl = (url) => {
     const imgEl = document.createElement('img')
